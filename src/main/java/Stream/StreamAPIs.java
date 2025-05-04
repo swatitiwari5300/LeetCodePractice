@@ -1,6 +1,7 @@
 package Stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -12,7 +13,8 @@ public class StreamAPIs {
         //occurrenceOfEachWord("I am learning Streams API in Java Java");
         //findWordsWithNVowels("I am learning Streams API in Java", 2);
         //splitOddEven(new int[]{1, 2, 3, 4, 5, 6, 7, 8});
-        occurrenceOfEachCharacter("Mississippi");
+        //occurrenceOfEachCharacter("Mississippi");
+        arrangeInOrder(new int[]{45,12,4,2,67,3});
     }
 
 
@@ -61,6 +63,19 @@ public class StreamAPIs {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         System.out.println(map);
+
+    }
+
+    //Q - Arrange the numbers in Descending/Ascending Order
+    public static void arrangeInOrder(int[] arr){
+
+        List<Integer> list = Arrays.stream(arr).boxed().toList();
+
+        List<Integer> asc = list.stream().sorted().toList();
+        List<Integer> desc = list.stream().sorted(Comparator.reverseOrder()).toList();
+
+        System.out.println(asc);
+        System.out.println(desc);
 
     }
 }
