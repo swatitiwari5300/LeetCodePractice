@@ -14,7 +14,10 @@ public class StreamAPIs {
         //findWordsWithNVowels("I am learning Streams API in Java", 2);
         //splitOddEven(new int[]{1, 2, 3, 4, 5, 6, 7, 8});
         //occurrenceOfEachCharacter("Mississippi");
-        arrangeInOrder(new int[]{45,12,4,2,67,3});
+        //arrangeInOrder(new int[]{45,12,4,2,67,3});
+       // System.out.println("odd sum of {1,3,4,5,6}: "+ findSumOdd(new int[]{1,3,4,5,6}));
+        //System.out.println("distinct sum of {1,1,3,4,5,5,6}: "+ findDistinctSum(new int[]{1,1,3,4,5,5,6}));
+        findDistinctCharacter("Hello World");
     }
 
 
@@ -77,5 +80,24 @@ public class StreamAPIs {
         System.out.println(asc);
         System.out.println(desc);
 
+    }
+
+    //Q - find the sum of all odd numbers from the array
+    public static int findSumOdd(int[] arr){
+        int sum = Arrays.stream(arr).filter(x-> x%2 !=0).sum();
+
+        return sum;
+    }
+
+    //Q - find the sum of unique elements from the array
+    public static int findDistinctSum(int[] arr){
+        return Arrays.stream(arr).distinct().sum();
+    }
+
+    //Q- find the first character in the string that occurred only once.
+    public static void findDistinctCharacter(String str){
+        String ch = Arrays.stream(str.split("")).filter(x -> str.indexOf(x) == str.lastIndexOf(x))
+                .findFirst().get();
+        System.out.println(ch);
     }
 }
