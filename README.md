@@ -8,3 +8,13 @@ Welcome to my personal repository where I consistently practice **Data Structure
 - 🚀 Classic **DSA problems** (arrays, trees, graphs, DP, etc.)
 - 💡 Code snippets in **Java** (or other languages I explore)
 - 📒 My notes, explanations, and optimized approaches
+
+## 🤝 Contributions
+
+This is my personal practice repo, but feel free to fork or refer to any solutions. If you find a mistake or want to discuss improvements, open an issue or connect with me!
+
+---
+
+## 🧍 About Me
+
+I'm a software developer passionate about backend development, problem-solving, and continuous learning.
