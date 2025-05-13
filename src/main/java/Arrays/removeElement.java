@@ -4,6 +4,7 @@ public class removeElement {
 
     public static void main(String[] args) {
         int[] nums = {3,2,2,3};
+        
         removeElement(nums, 3);
     }
 
