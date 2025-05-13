@@ -40,6 +40,7 @@ public class StreamAPIs {
 
     public static boolean checkNVowels(String str, int vowel) {
         long count = Arrays.stream(str.split("")).filter(s -> checkVowel(s.toLowerCase())).count();
+        
         return (int) count == vowel;
     }
 
