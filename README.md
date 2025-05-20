@@ -1,6 +1,6 @@
 # 📘 LeetCode & DSA Practice
 
-Welcome to my personal repository where I consistently practice **Data Structures and Algorithms (DSA)** through **LeetCode** and other platforms. This is part of my journey to sharpen problem-solving skills and prepare for coding interviews.
+Welcome to my personal repository where I consistently practice **Data Structures and Algorithms (DSA)** through **LeetCode** and other platforms. This is part of my journey to sharpen problem-solving skills and prepare for coding interviews!!
 
 ## 📌 What You’ll Find Here
 
