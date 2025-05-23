@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class StreamAPIs {
 
+    //Maina method to call all the relevant methods based on the use case
     public static void main(String[] args) {
         //occurrenceOfEachWord("I am learning Streams API in Java Java");
         //findWordsWithNVowels("I am learning Streams API in Java", 2);
@@ -39,6 +40,7 @@ public class StreamAPIs {
 
     public static boolean checkNVowels(String str, int vowel) {
         long count = Arrays.stream(str.split("")).filter(s -> checkVowel(s.toLowerCase())).count();
+        
         return (int) count == vowel;
     }
 
