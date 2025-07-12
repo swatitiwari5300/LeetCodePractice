@@ -1,9 +1,6 @@
 package Stream;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -18,7 +15,8 @@ public class StreamAPIs {
         //arrangeInOrder(new int[]{45,12,4,2,67,3});
        // System.out.println("odd sum of {1,3,4,5,6}: "+ findSumOdd(new int[]{1,3,4,5,6}));
         //System.out.println("distinct sum of {1,1,3,4,5,5,6}: "+ findDistinctSum(new int[]{1,1,3,4,5,5,6}));
-        findDistinctCharacter("Hello World");
+        //findDistinctCharacter("Hello World");
+        findFirstRepeatingCharacter("Hello Wolrd");
     }
 
 
@@ -101,5 +99,12 @@ public class StreamAPIs {
         String ch = Arrays.stream(str.split("")).filter(x -> str.indexOf(x) == str.lastIndexOf(x))
                 .findFirst().get();
         System.out.println(ch);
+    }
+
+    //Q - find the first repeating character in the String
+    public static void findFirstRepeatingCharacter(String str){
+        Map<String, Long> map = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), () -> new LinkedHashMap<>(), Collectors.counting()));
+        String s = map.entrySet().stream().filter(m -> m.getValue()>1).findFirst().get().getKey();
+        System.out.println(s);
     }
 }
