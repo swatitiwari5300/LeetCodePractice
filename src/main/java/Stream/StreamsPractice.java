@@ -11,6 +11,7 @@ public class StreamsPractice {
         findDuplicates(list);
         secondHighest(list);
         groupStringByLength("Swati Tiwari is a coder");
+        frequencyOfEachChar("Swati Tiwari is a coder");
     }
 
     //Problem: Remove duplicates from a list of integers.
@@ -36,6 +37,13 @@ public class StreamsPractice {
     //Problem: Group Strings by Their Length
     public static void groupStringByLength(String str){
         Map<Integer, List<String>> ans = Arrays.stream(str.split(" ")).collect(Collectors.groupingBy(s -> s.length()));
+        System.out.println(ans);
+    }
+
+    //Problem: Frequency of Each Character in a String
+    public static void frequencyOfEachChar(String str){
+        Map<String, Long> ans = Arrays.stream(str.split(""))
+                .filter(s -> !s.equals(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(ans);
     }
 }
