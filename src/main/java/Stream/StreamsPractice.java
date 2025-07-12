@@ -12,6 +12,8 @@ public class StreamsPractice {
         secondHighest(list);
         groupStringByLength("Swati Tiwari is a coder");
         frequencyOfEachChar("Swati Tiwari is a coder");
+        partitionNumberOddEven(List.of(1, 2, 3, 4, 5, 6));
+        countWords("java stream api is powerful");
     }
 
     //Problem: Remove duplicates from a list of integers.
@@ -44,6 +46,18 @@ public class StreamsPractice {
     public static void frequencyOfEachChar(String str){
         Map<String, Long> ans = Arrays.stream(str.split(""))
                 .filter(s -> !s.equals(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(ans);
+    }
+
+    //Problem: Partition Numbers into Even and Odd
+    public static void partitionNumberOddEven(List<Integer> list){
+        Map<Boolean, List<Integer>> ans = list.stream().collect(Collectors.partitioningBy(n -> n%2==0));
+        System.out.println(ans);
+    }
+
+    //Problem: Count Words in a Sentence
+    public static void countWords(String str){
+        Long ans = Arrays.stream(str.split(" ")).count();
         System.out.println(ans);
     }
 }
