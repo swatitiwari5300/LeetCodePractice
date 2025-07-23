@@ -1,8 +1,6 @@
 package Strings;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,7 +11,9 @@ public class FirstNonRepeatingChar {
         //maxFrequencyChar("swiss");
         //sumOfAllNumbers("abc123xyz45");
         //extractDigits("a1b2c3");
-        checkDigitsOnly("14a");
+        //checkDigitsOnly("14a");
+        removeDupes("programming");
+        keepDupesOnce("programming");
     }
 
     public static void findNonRep(String str){
@@ -71,7 +71,24 @@ public class FirstNonRepeatingChar {
         }else{
             System.out.println("NO");
         }
+    }
 
+    //Remove all duplicate characters(not even once the repeating char is present)
+    public static void removeDupes(String str){
+        String ans = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() == 1).map(x -> x.getKey()).collect(Collectors.joining(""));
+
+        System.out.println(ans);
+    }
+    //Remove all duplicate characters(keeps once)
+    public static void keepDupesOnce(String str){
+        Set<String> set = new LinkedHashSet<>();
+        Arrays.stream(str.split("")).forEach(x -> set.add(x));
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String ch : set) {
+            stringBuilder.append(ch);  // Append each character without brackets or commas
+        }
+        System.out.println(stringBuilder.toString());
     }
 
 
