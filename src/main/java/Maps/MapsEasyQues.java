@@ -1,9 +1,6 @@
 package Maps;
 
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -13,12 +10,21 @@ public class MapsEasyQues {
         //containsDuplicates(new int[]{1,5,6,9,12,5});
         //int[] arr = {4, 2, 4, 3, 2, 1, 3, 3};
         //firstRepeatingEle(arr);
-        int[] arr = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
+        //int[] arr = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
         //groupElementsOfSameFrequency(arr);
 
-        int[] arr1 = {1, 1, 2};
+/*        int[] arr1 = {1, 1, 2};
         int[] arr2 = {1, 2, 2};
-        checkArraysEqual(arr1, arr2);
+        checkArraysEqual(arr1, arr2);*/
+/*        int[] arr1 = {};
+        int[] arr2 = {1, 2, 3};
+
+        findCommonElements(arr1, arr2);*/
+
+        int[] arr = {1, 4, 20, 3, 10, 5};
+        int target = 33;
+
+        fidSubArr(arr, target);
 
     }
 
@@ -74,6 +80,43 @@ public class MapsEasyQues {
             }
         }
         System.out.println("Equal");
+    }
+
+    //Find intersection of two arrays
+    public static void findCommonElements(int[] arr1, int[] arr2){
+
+        Map<Integer, Long> map1 = Arrays.stream(arr1).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<Integer, Long> map2 = Arrays.stream(arr2).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        int[] shortArr = arr1.length<arr2.length?arr1:arr2;
+        List<Integer> list = new ArrayList<>();
+        for(int i : shortArr){
+            if(map1.containsKey(i) && map2.containsKey(i)){
+                list.add(i);
+            }
+        }
+        System.out.println(list);
+    }
+
+    //Find subarray with given sum - All Positive numbers
+    public static void fidSubArr(int[] arr, int target){
+
+        int start = 0, end = 0, sum = 0;
+        while(end < arr.length){
+
+            sum += arr[end];
+            while(start < end && sum > target){
+                sum -= arr[start];
+                start++;
+            }
+            if(sum == target){
+                System.out.println("start index: "+start + " end index: "+end);
+                return;
+            }
+
+            end++;
+        }
+        System.out.println("No subarray found.");
     }
 
 }
