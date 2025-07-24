@@ -3,6 +3,7 @@ package Strings;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -13,7 +14,8 @@ public class EasyStringQues {
         countVowelAndConsonants("SwAti");
         compressString("aaabbc");*/
 
-        isPalindrome("swati");
+        //isPalindrome("swati");
+        isAnagram("hello", "hell");
     }
 
 
@@ -60,6 +62,30 @@ public class EasyStringQues {
             System.out.println("Palindrome");
         }else{
             System.out.println("Not a palindrome");
+        }
+    }
+
+    public static void isAnagram(String s1, String s2){
+        if(s1.length() != s2.length()){
+            System.out.println("Not an anagram");
+            return;
+        }
+        Map<String, Long> map1 = Arrays.stream(s1.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<String, Long> map2 = Arrays.stream(s2.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        String[] strArr = s2.split("");
+        boolean flag = true;
+        for(String s : strArr){
+            if(!Objects.equals(map2.get(s), map1.get(s))){
+                flag = false;
+                break;
+            }
+        }
+
+        if(flag){
+            System.out.println("Anagram");
+        }else{
+            System.out.println("Not a anagram");
         }
     }
 }
