@@ -15,7 +15,10 @@ public class EasyStringQues {
         compressString("aaabbc");*/
 
         //isPalindrome("swati");
-        isAnagram("hello", "hell");
+        //isAnagram("hello", "hell");
+        //oneEditAway("helle", "hello");
+        isSubSequence("f", "abc");
+
     }
 
 
@@ -86,6 +89,29 @@ public class EasyStringQues {
             System.out.println("Anagram");
         }else{
             System.out.println("Not a anagram");
+        }
+    }
+
+    //Check if two strings are one edit away
+    public static void oneEditAway(String s1, String s2) {
+    }
+
+    //Check if string is subsequence of another
+    public static void isSubSequence(String s1, String s2) {
+
+        int i = 0, j = 0;
+
+        while(j < s2.length() && i < s1.length()){
+            if(s1.charAt(i) == s2.charAt(j)){
+                i++;
+            }
+            j++;
+        }
+
+        if(i == s1.length()){
+            System.out.println("yes");
+        }else {
+            System.out.println("No");
         }
     }
 }
