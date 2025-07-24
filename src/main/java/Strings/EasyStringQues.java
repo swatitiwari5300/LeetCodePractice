@@ -17,7 +17,9 @@ public class EasyStringQues {
         //isPalindrome("swati");
         //isAnagram("hello", "hell");
         //oneEditAway("helle", "hello");
-        isSubSequence("f", "abc");
+       // isSubSequence("f", "abc");
+        //rearrangedInPalindrome("abc");
+        needleHaystackProblem("lo", "hello");
 
     }
 
@@ -113,5 +115,54 @@ public class EasyStringQues {
         }else {
             System.out.println("No");
         }
+    }
+
+    //Check if a string can be rearranged into a palindrome
+    //✅ Rules:
+    //For even-length strings:
+    //All characters must appear an even number of times.
+    //For odd-length strings:
+    //Only one character can appear an odd number of times.
+    //All others must appear an even number of times.
+    public static void rearrangedInPalindrome(String str){
+        int count = str.length();
+        Map<String, Long> map = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        if(count%2 == 0){
+            for(Map.Entry<String, Long> e : map.entrySet()){
+                if(e.getValue()%2 != 0){
+                    System.out.println("Can not be arranged to a palindrome");
+                    return;
+                }
+            }
+            System.out.println("Can be arranged to a palindrome");
+        }else{
+            int odd = 0;
+            for(Map.Entry<String, Long> e : map.entrySet()){
+                if(e.getValue()%2 != 0){
+                    odd++;
+                }
+            }
+            if (odd == 1){
+                System.out.println("Can be arranged to a palindrome");
+            }else{
+                System.out.println("Can not be arranged to a palindrome");
+            }
+        }
+    }
+
+    //Implement strstr() (or indexOf)
+    public static void needleHaystackProblem(String needle, String haystack){
+        int n = needle.length();
+
+        for(int i = 0 ; i <= haystack.length()-n ; i++){
+            String subString = haystack.substring(i, i+n);
+            if(subString.equals(needle)){
+                System.out.println("Found!! at: "+ i);
+                return;
+            }
+        }
+
+        System.out.println("Not found");
     }
 }
