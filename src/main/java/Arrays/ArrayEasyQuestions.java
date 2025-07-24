@@ -1,9 +1,6 @@
 package Arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ArrayEasyQuestions {
 
@@ -11,7 +8,13 @@ public class ArrayEasyQuestions {
         List<Integer> list = Arrays.asList(1,5,12,33,45);
         //largestInArray(list);
         //secondLargestNumber(list);
-        isSorted(list);
+        //isSorted(list);
+        //reverseAnArray(new int[]{1,5,6,9,12});
+
+        int[] arr = {1, 2, 4, 5};  // Here, 3 is missing
+        //findMissing(arr, 5);
+        removeDupes(new int[]{1,5,6,9,12,5});
+
     }
 
 
@@ -39,5 +42,38 @@ public class ArrayEasyQuestions {
         }else{
             System.out.println("Sorted");
         }
+    }
+
+    //Reverse an array
+    public static void reverseAnArray(int[] list){
+        int beg = 0;
+        int last = list.length-1;
+        int temp = 0;
+        while(beg<last){
+            temp = list[beg];
+            list[beg] = list[last];
+            list[last] = temp;
+            beg++;last--;
+        }
+        System.out.println(Arrays.toString(list));
+    }
+
+    //Find the missing number in range 1 to N
+    public static void findMissing(int[] arr, int n){
+        int sum = 0;
+        for(int i : arr){
+            sum += i;
+        }
+        int ans = ((n*(n+1))/2)-sum;
+        System.out.println(ans);
+    }
+
+    //Remove duplicates from sorted array
+    public static void removeDupes(int[] arr){
+        HashSet<Integer> set = new HashSet<>();
+        for(int i : arr){
+            set.add(i);
+        }
+        System.out.println(Arrays.toString(set.toArray()));
     }
 }
