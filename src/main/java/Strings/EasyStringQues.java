@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 public class EasyStringQues {
 
     public static void main(String[] args) {
-        reverseAString("Swati");
+/*        reverseAString("Swati");
         countVowelAndConsonants("SwAti");
-        compressString("aaabbc");
+        compressString("aaabbc");*/
+
+        isPalindrome("swati");
     }
 
 
@@ -48,5 +50,16 @@ public class EasyStringQues {
                     stringBuilder.append(x.getValue());
                 });
         System.out.println(stringBuilder.toString());
+    }
+
+    //Check if a String is Palindrome
+    public static void isPalindrome(String str){
+        StringBuilder stringBuilder = new StringBuilder();
+        String str2 = stringBuilder.append(str).reverse().toString();
+        if(str.equals(str2)){
+            System.out.println("Palindrome");
+        }else{
+            System.out.println("Not a palindrome");
+        }
     }
 }
