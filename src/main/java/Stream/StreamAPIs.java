@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class StreamAPIs {
 
-    //Maina method to call all the relevant methods based on the use case
+    //Main method to call all the relevant methods based on the use case
     public static void main(String[] args) {
         //occurrenceOfEachWord("I am learning Streams API in Java Java");
         //findWordsWithNVowels("I am learning Streams API in Java", 2);
