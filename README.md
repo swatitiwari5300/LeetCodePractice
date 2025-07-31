@@ -6,16 +6,16 @@ Welcome to my personal repository where I consistently practice **Data Structure
 
 - ✅ Solutions to **LeetCode** problems (categorized by topic & difficulty)
 - 🚀 Classic **DSA problems** (arrays, trees, graphs, DP, etc.)
-- 💡 Code snippets in **Java** (or other languages I explore)
+- 💡 Code snippets in **Java**
 - 📒 My notes, explanations, and optimized approaches
 
 - ## 🧠 Why This Repo?
 
-- Track my progress & revision.
+- Track my progress and revision.
 - Help others looking for similar solutions.
 - Prepare for **coding interviews** (product & service-based)
 
-## 🤝 Contributions!
+## 🤝 Contributions!!!
 
 This is my personal practice repo, but feel free to fork or refer to any solutions. If you find a mistake or want to discuss improvements, open an issue or connect with me!
 
