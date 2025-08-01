@@ -11,7 +11,7 @@ Welcome to my personal repository where I consistently practice **Data Structure
 
 - ## 🧠 Why This Repo?
 
-- Track my progress and revision.
+- I Track my progress and revision.
 - Help others looking for similar solutions.
 - Prepare for **coding interviews** (product & service-based)
 
