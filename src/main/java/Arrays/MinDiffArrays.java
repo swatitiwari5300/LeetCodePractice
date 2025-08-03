@@ -137,5 +137,16 @@ public class MinDiffArrays {
         return beg;
     }
 
+    //Find max2 from unsorted array
+    public static void findSecondMax(List<Integer> list){
+        Optional<Integer> secondMax = list.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+
+        if (secondMax.isPresent()) {
+            System.out.println("Second Max: " + secondMax.get());
+        } else {
+            System.out.println("Second Max does not exist.");
+        }
+    }
+
 
 }
