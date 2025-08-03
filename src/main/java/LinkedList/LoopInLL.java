@@ -13,7 +13,6 @@ public class LoopInLL {
     }
 
     public static boolean hasLoop(Node head){
-
         Node slow = head;
         Node fast = head;
 
