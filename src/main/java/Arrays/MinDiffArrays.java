@@ -110,5 +110,32 @@ public class MinDiffArrays {
 
     }
 
+    //https://leetcode.com/problems/search-insert-position/
+    public int searchInsert(int[] nums, int target) {
+        int beg = 0;
+        int end = nums.length-1;
+        int mid = (beg+end)/2;
+
+        while( beg < end){
+
+            if(target > nums[mid]){
+                beg  = mid+1;
+            } else if (target < nums[mid]) {
+                end = mid -1;
+            }
+            else if(target == nums[mid]){
+                return mid;
+            }
+            mid = (beg+end)/2;
+        }
+
+        if(nums[nums.length-1] < target){
+            return nums.length;
+        }
+
+        if(nums[0] > target) return 0;
+        return beg;
+    }
+
 
 }
