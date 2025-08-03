@@ -10,7 +10,9 @@ public class MinDiffArrays {
 
         List<Integer> list1 = Arrays.asList(1, 3, 5, 7);
         List<Integer> list2 = Arrays.asList(2, 4, 6, 8);
-        mergeTwoArrayList(list1,list2);
+        //mergeTwoArrayList(list1,list2);
+
+        findSecMax(Arrays.asList(10, 30, 20, 40, 50));
     }
 
     //https://leetcode.com/problems/minimum-absolute-difference/description/
@@ -146,6 +148,32 @@ public class MinDiffArrays {
         } else {
             System.out.println("Second Max does not exist.");
         }
+    }
+
+    ////Find max2 from unsorted array --- withoutStreams
+    public  static void findSecMax(List<Integer> list){
+
+        if(list.size() < 2){
+            System.out.println("Second Max is not found");
+            return;
+        }
+
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for(int num : list){
+
+            if(num > max){
+                secondMax = max;
+                max = num;
+            }else if (num > secondMax && !(num == max)){
+                secondMax = num;
+            }
+
+        }
+
+        System.out.println("Second max: "+ secondMax);
+
     }
 
 
