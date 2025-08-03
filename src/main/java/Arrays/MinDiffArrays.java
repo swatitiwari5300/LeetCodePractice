@@ -196,5 +196,28 @@ public class MinDiffArrays {
         return  ans;
     }
 
+    //https://leetcode.com/problems/sqrtx/description/
+    public int mySqrt(int x) {
+
+        if(x <= 1) return x;
+
+        int beg = 1, end = x;
+        int ans = 0 ;
+        while(beg <= end){
+
+            int mid = beg + (end-beg)/2;
+            long sqr = (long)mid*mid;
+            if(x == sqr) return mid;
+
+            else if(sqr < x){
+                ans = mid;
+                beg = mid+1;
+            }else{
+                end = mid-1;
+            }
+        }
+        return ans;
+    }
+
 
 }
