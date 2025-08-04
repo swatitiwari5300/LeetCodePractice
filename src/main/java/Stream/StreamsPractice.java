@@ -7,13 +7,21 @@ import java.util.stream.Collectors;
 public class StreamsPractice {
     public static void main(String[] args) {
         List<Integer> list = List.of(1,2,2,3,4,16,12,2);
-        removeDup(list);
+/*        removeDup(list);
         findDuplicates(list);
         secondHighest(list);
         groupStringByLength("Swati Tiwari is a coder");
         frequencyOfEachChar("Swati Tiwari is a coder");
         partitionNumberOddEven(List.of(1, 2, 3, 4, 5, 6));
-        countWords("java stream api is powerful");
+        countWords("java stream api is powerful");*/
+
+        List<List<Integer>> listOfLists = Arrays.asList(
+                Arrays.asList(1, 2, 3),
+                Arrays.asList(4, 5),
+                Arrays.asList(6, 7, 8)
+        );
+
+        addInList(listOfLists);
     }
 
     //Problem: Remove duplicates from a list of integers.
@@ -59,5 +67,21 @@ public class StreamsPractice {
     public static void countWords(String str){
         Long ans = Arrays.stream(str.split(" ")).count();
         System.out.println(ans);
+    }
+
+    //Add Elements of List of List using Stream API
+    public static void addInList(List<List<Integer>> list){
+
+        int sum = list.stream().flatMap(x -> x.stream()).mapToInt(x -> x).sum();
+        System.out.println(sum);
+
+    }
+
+    //sort map by value
+    public static void sortMapByValue(Map<Integer, Integer> map){
+
+        Map<Integer, Integer> sortedMap = map.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue(), (e1, e2) -> e1, LinkedHashMap::new));
+
     }
 }
