@@ -1,15 +1,12 @@
 public class test2 {
 
     public static void main(String[] args) {
-        //System.out.println("Try programiz.pro");
         int[] a = {1,4,9};
         int[] b = {4,8,15};
-        //System.out.println("hey");
         testArr(a,b);
     }
 
      static void testArr(int[] a, int[] b){
-        //System.out.println("hey");
         int [] c = new int[a.length+b.length];
 
         int i = 0, j = 0, k= 0;
@@ -26,8 +23,6 @@ public class test2 {
         }
         while( i < a.length){ c[k++] = a[i++] ;}
         while( j < b.length){ c[k++] = b[j++] ;}
-
-        //System.out.println("hey");
 
         for(int n : c){
             System.out.println(n);
