@@ -48,6 +48,7 @@ public class ArrayEasyQuestions {
         int beg = 0;
         int last = list.length-1;
         int temp = 0;
+        
         while(beg<last){
             temp = list[beg];
             list[beg] = list[last];
