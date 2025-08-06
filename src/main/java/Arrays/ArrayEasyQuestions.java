@@ -11,7 +11,7 @@ public class ArrayEasyQuestions {
         //isSorted(list);
         //reverseAnArray(new int[]{1,5,6,9,12});
 
-        int[] arr = {1, 2, 4, 5};  // Here, 3 is missing
+        int[] arr = {1, 2, 4, 5};
         //findMissing(arr, 5);
         removeDupes(new int[]{1,5,6,9,12,5});
 
