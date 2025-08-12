@@ -7,10 +7,17 @@ import java.util.stream.Collectors;
 class Employees {
     String name;
     double salary;
+    String dept;
     Employees(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
+    Employees(String name, String dept, double salary) {
+        this.name = name;
+        this.dept = dept;
+        this.salary = salary;
+    }
+    public String getDept() { return dept; }
     public double getSalary() { return salary; }
     public String getName() { return name; }
 }
@@ -92,5 +99,9 @@ public class practiceStream {
     }
 
     //From a list of employees, group by department and find the average salary per department.
+    public static void findAvgSal(List<Employees> employees){
 
+        Map<String, Double> avgSalaryByDept = employees.stream().collect(Collectors.groupingBy(Employees::getDept, Collectors.averagingDouble(Employees::getSalary)));
+        System.out.println(avgSalaryByDept);
+    }
 }
