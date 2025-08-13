@@ -79,4 +79,38 @@ public class LoopInLL {
         System.out.println(slow.data);
 
     }
+
+    //Find the intersection point of two linked list
+    public static Node findIntersection(Node headA, Node headB){
+        int lengthA = length(headA);
+        int lengthB = length(headB);
+
+        while(lengthA>lengthB){
+            headA = headA.next;
+            lengthA--;
+        }
+
+        while(lengthB > lengthA){
+            headB = headB.next;
+            lengthB--;
+        }
+
+        while(headA!=headB){
+            headA = headA.next;
+            headB = headB.next;
+        }
+        return headA;
+    }
+
+    //finding length of the linked list
+    public static int length(Node head){
+        int count = 0;
+
+        while (head != null){
+            count++;
+            head = head.next;
+        }
+
+        return count;
+    }
 }
