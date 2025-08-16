@@ -146,6 +146,15 @@ public class Interview {
                 .flatMap(x -> x.stream()).toList();
         System.out.println(ans);
     }
+    
+    //Find top 3 highest numbers
+    public static void threeHighestNum(List<Integer> list){
+
+        List<Integer> ans = list.stream()
+                .sorted(Comparator.reverseOrder())
+                .limit(3).toList();
+        System.out.println(ans);
+    }
 
 //Longest Substring Without Repeating Characters in a string.
 
