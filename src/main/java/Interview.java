@@ -119,6 +119,13 @@ public class Interview {
         System.out.println(list);
     }
 
+    //Group words by their length
+    public static void groupByLength(List<String> list){
+        Map<Integer, List<String>> map = list.stream()
+                .collect(Collectors.groupingBy(x -> x.length()));
+        System.out.println(map);
+    }
+
 //Longest Substring Without Repeating Characters in a string.
 
 
