@@ -11,7 +11,8 @@ public class Interview {
         list.add(1);
         list.add(10);
 
-        reverseList(list);
+        //reverseList(list);
+        nonRepeatingChar("swiss");
     }
 
     public static void reverseList(List<Integer> list) {
@@ -124,6 +125,18 @@ public class Interview {
         Map<Integer, List<String>> map = list.stream()
                 .collect(Collectors.groupingBy(x -> x.length()));
         System.out.println(map);
+    }
+
+    //Find the first non-repeated character in a string
+    public static void nonRepeatingChar(String str){
+
+        String s = Arrays.stream(str.split(""))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet()
+                .stream().filter(x -> x.getValue() ==1)
+                .map(x -> x.getKey()).findFirst().get();
+
+        System.out.println(s);
     }
 
 //Longest Substring Without Repeating Characters in a string.
