@@ -93,6 +93,14 @@ public class Interview {
         System.out.println(sum);
     }
 
+    //Find common elements between two lists
+    public static void commonElements(List<Integer> list1, List<Integer> list2){
+
+        List<Integer> ans = list1.stream()
+                .filter(x -> list2.contains(x)).toList();
+        System.out.println(ans);
+    }
+
 
 //Longest Substring Without Repeating Characters in a string.
 
