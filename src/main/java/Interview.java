@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -63,9 +60,14 @@ public class Interview {
         System.out.println(ans);
     }
 
-
     //Reverse words in a sentence
+    public static void reverseWords(String str){
+        String ans = Arrays.stream(str.split(" "))
+                .map(x -> new StringBuilder(x).reverse().toString())
+                .collect(Collectors.joining(" "));
+        System.out.println(ans);
 
+    }
 
 //Longest Substring Without Repeating Characters in a string.
 
