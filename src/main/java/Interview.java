@@ -57,6 +57,11 @@ public class Interview {
     }
 
     //Find the longest string in a list
+    public static void longestString(List<String> list){
+
+        String ans = list.stream().max(Comparator.comparingInt(x -> x.length())).get();
+        System.out.println(ans);
+    }
 
 
     //Reverse words in a sentence
