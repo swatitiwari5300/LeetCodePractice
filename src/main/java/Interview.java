@@ -139,6 +139,14 @@ public class Interview {
         System.out.println(s);
     }
 
+    //Flatten a list of lists
+    public static void flattenAList(List<List<String>> list){
+
+        List<String> ans = list.stream()
+                .flatMap(x -> x.stream()).toList();
+        System.out.println(ans);
+    }
+
 //Longest Substring Without Repeating Characters in a string.
 
 
