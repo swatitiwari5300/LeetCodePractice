@@ -77,6 +77,23 @@ public class Interview {
         System.out.println(map);
     }
 
+    //Find all numbers starting with digit 1
+    public static void numberStartingWithOne(List<Integer> list){
+        list = list.stream()
+                .filter(x -> String.valueOf(x).startsWith("1"))
+                .toList();
+        System.out.println(list);
+    }
+
+    //Find the sum of squares of first 5 natural numbers
+    public static void sumOfSquare(){
+        int sum = IntStream.rangeClosed(1,5)
+                .map(x -> x*x)
+                .sum();
+        System.out.println(sum);
+    }
+
+
 //Longest Substring Without Repeating Characters in a string.
 
 
