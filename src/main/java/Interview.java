@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Interview {
@@ -33,8 +36,18 @@ public class Interview {
     }
 
     //Count frequency of each element
-    public static void 
+    public static void countFreq(List<String> list){
+
+        Map<String, Long> map = list.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(map);
+    }
+
     //Remove duplicates and preserve order
+    public static void removeDups(List<Integer> list){
+        list = list.stream().distinct().toList();
+        System.out.println(list);
+    }
 
     //Find all even numbers and square them
 
