@@ -69,6 +69,14 @@ public class Interview {
 
     }
 
+    //Partition numbers into even and odd
+    public static void groupEvenAndOdds(List<Integer> list){
+
+        Map<Boolean, List<Integer>> map = list.stream()
+                .collect(Collectors.partitioningBy(x -> x%2 == 0));
+        System.out.println(map);
+    }
+
 //Longest Substring Without Repeating Characters in a string.
 
 
