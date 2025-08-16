@@ -101,6 +101,23 @@ public class Interview {
         System.out.println(ans);
     }
 
+    //Find the average of a list
+    public static void findAverage(List<Integer> list){
+
+        double ans = list.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+
+        System.out.println(ans);
+    }
+
+    //Convert list of strings to uppercase & sort
+    public static void upperCaseAndSort(List<String> list){
+
+        list = list.stream().map(x -> x.toUpperCase()).sorted().toList();
+        System.out.println(list);
+    }
 
 //Longest Substring Without Repeating Characters in a string.
 
