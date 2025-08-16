@@ -44,14 +44,20 @@ public class Interview {
     }
 
     //Remove duplicates and preserve order
-    public static void removeDups(List<Integer> list){
+    public static void removeDupes(List<Integer> list){
         list = list.stream().distinct().toList();
         System.out.println(list);
     }
 
     //Find all even numbers and square them
+    public static void findEvenAndSquare(List<Integer> list){
+        list = list.stream().filter(x -> x%2 == 0)
+                .map(x -> x*x).toList();
+        System.out.println(list);
+    }
 
     //Find the longest string in a list
+
 
     //Reverse words in a sentence
 
