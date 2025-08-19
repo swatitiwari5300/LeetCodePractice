@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Student{
+class Student implements Comparable<Student>{
 
     String name;
     int age;
@@ -16,12 +16,24 @@ class Student{
         return "name: "+this.name+" and age: "+ this.age;
     }
 
+    /**
+     * @param o the object to be compared.
+     * @return
+     */
+    @Override
+    public int compareTo(Student o) {
+
+        if(this.age > o.age) return 1;
+        else if (this.age == o.age) return 0;
+        return -1;
+    }
 }
 public class prep {
 
     public static void main(String[] args) {
         //compareStrings();
-        compareStudents();
+        //compareStudents();
+        compareStudentsUsingComparable();
     }
 
 
@@ -55,6 +67,18 @@ public class prep {
         System.out.println(list);
 
     }
+
+    public static void compareStudentsUsingComparable(){
+
+        List<Student> list = new ArrayList<>();
+        list.add(new Student("Swati", 34));
+        list.add(new Student("Somya", 12));
+        list.add(new Student("Harsh", 44));
+
+        Collections.sort(list);
+        System.out.println(list);
+    }
+
 
     //Sorting the List of String on the basis of Length of each String in the list
     public static void compareStrings(){
