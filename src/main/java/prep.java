@@ -1,8 +1,27 @@
 import java.util.*;
+
+class Student{
+
+    String name;
+    int age;
+
+    public Student(String name, int age) {
+        this.age = age;
+        this.name = name;
+    }
+
+
+    @Override
+    public String toString(){
+        return "name: "+this.name+" and age: "+ this.age;
+    }
+
+}
 public class prep {
 
     public static void main(String[] args) {
-        compareStrings();
+        //compareStrings();
+        compareStudents();
     }
 
 
@@ -57,4 +76,25 @@ public class prep {
         Collections.sort(list, com);
         System.out.println(list);
     }
+
+    //Sort the Students based on Student age using comparator
+    public static void compareStudents(){
+        Comparator<Student> com = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if(o1.age > o2.age) return 1;
+                else if (o1.age == o2.age) return 0;
+                return -1;
+            }
+        };
+
+        List<Student> list = new ArrayList<>();
+        list.add(new Student("Swati", 34));
+        list.add(new Student("Somya", 12));
+        list.add(new Student("Harsh", 44));
+
+        Collections.sort(list, com);
+        System.out.println(list);
+    }
+
 }
