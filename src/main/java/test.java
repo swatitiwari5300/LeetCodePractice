@@ -11,8 +11,6 @@ public class test {
 
     public static void firstNonRepeatingChar(String str){
 
-
-
         String firstNonRepeatingChar = Arrays.stream(str.split(""))
                 .filter(ch -> str.indexOf(ch) == str.lastIndexOf(ch))
                 .findFirst().get();
